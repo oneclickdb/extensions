@@ -71,15 +71,17 @@ extension [Int]
 {
     var isConsecutive : Bool
     {
-        if self.isEmpty
+        let values = self.sorted(by: {$0 < $1})
+        
+        if values.isEmpty
         {
             return false
         }
         else
         {
-            var currentNumber = self.first!
+            var currentNumber = values.first!
             
-            for number in self.dropFirst()
+            for number in values.dropFirst()
             {
                 if number - currentNumber != 1
                 {
