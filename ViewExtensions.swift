@@ -8,19 +8,6 @@
 import Foundation
 import SwiftUI
 
-extension View
-{
-    var menuWidth: CGFloat
-    {
-        let screen = UIScreen.main.bounds
-        
-        return screen.width / 2 > 200 ? 200 : screen.width / 2
-    }
-    
-    var screenHeight: CGFloat { return UIScreen.main.bounds.height }
-    var screenWidth: CGFloat { return UIScreen.main.bounds.width }
-}
-
 extension Bundle
 {
     func decode<T: Decodable>(_ type: T.Type, from file: String, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T {
