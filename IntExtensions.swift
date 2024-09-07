@@ -66,3 +66,30 @@ extension Int
         }
     }
 }
+
+extension [Int]
+{
+    var isConsecutive : Bool
+    {
+        if self.isEmpty
+        {
+            return false
+        }
+        else
+        {
+            var currentNumber = self.first!
+            
+            for number in self.dropFirst()
+            {
+                if number - currentNumber != 1
+                {
+                    return false
+                }
+                
+                currentNumber = number
+            }
+            
+            return true
+        }
+    }
+}
