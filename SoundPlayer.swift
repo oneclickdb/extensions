@@ -11,6 +11,22 @@ func playSound(sound: String, type: String)
         do
         {
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            func playSound(sound: String, type: String, loops: Int = 0, rate: Float = 1.0)
+{
+    if let path = Bundle.main.path(forResource: sound, ofType: type)
+    {
+        do
+        {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            audioPlayer?.numberOfLoops = loops
+            audioPlayer?.enableRate = true
+            audioPlayer?.rate = rate
+            audioPlayer?.play()
+        } catch {
+            print("Error finding sound file")
+        }
+    }
+}
             audioPlayer?.play()
         } catch {
             print("Error finding sound file")
