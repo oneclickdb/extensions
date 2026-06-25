@@ -42,9 +42,9 @@ func playSystemSound(number: UInt32 = 1104)
 
 func speak(text: String)
 {
-    var speechSynthesizer = AVSpeechSynthesizer()
+    let speechSynthesizer = AVSpeechSynthesizer()
 
-    var speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
+    let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
     
     speechUtterance.rate = AVSpeechUtteranceMaximumSpeechRate / 4.0
     
